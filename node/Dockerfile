@@ -1,5 +1,6 @@
 FROM node:8-alpine
 WORKDIR app
+COPY package.json package.json
+RUN npm i
 COPY . .
-VOLUME output
 ENTRYPOINT ["node", "index.js"]

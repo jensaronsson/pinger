@@ -1,0 +1,6 @@
+#! /bin/sh
+while true; do
+echo $(date)
+curl -s -o /dev/null -I -X GET -w "target: %{url_effective} - %{http_code} \n" ${TARGET}
+sleep ${INTERVAL-60}
+done
